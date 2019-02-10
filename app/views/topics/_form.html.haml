@@ -1,0 +1,19 @@
+= form_for @topic do |f|
+  - if @topic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
+      %ul
+        - @topic.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title,class: "form-control"
+  .field
+    = f.label :description
+    = f.text_area :description,class: "form-control"
+  .field
+    = f.label :status_active
+    = f.check_box :status_active
+  .actions
+    = f.submit 'Publish', class: 'btn btn-primary'

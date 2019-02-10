@@ -1,0 +1,18 @@
+.container
+	%p#notice= notice
+	%p
+		%b Title:
+		= @topic.title
+	%p
+		%b Description:
+		= @topic.description
+	%p
+		%b User:
+		= @topic.user_id
+	%p
+		%b Status active:
+		= @topic.status_active
+
+	= link_to 'Edit', edit_topic_path(@topic)
+	\|
+	= link_to 'Back', topics_path
